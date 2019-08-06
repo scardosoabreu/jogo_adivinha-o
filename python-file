@@ -1,0 +1,41 @@
+import random
+print("*********************************")
+print("***Bem vindo ao jogo***")
+print("*********************************")
+
+secreto = random.randrange(1,101)
+total_de_tentativas = 0
+nivel = int(input("Defina o nível:[1-fácil] [2-médio] [3-difícil] "))
+numero = int(input("Digite um número: "))
+
+if(nivel == 1):
+    total_de_tentativas = 10
+elif(nivel == 2):
+    total_de_tentativas = 5
+else:
+    total_de_tentativas = 3
+
+   
+for jogo in range (2, total_de_tentativas + 1):
+    if (secreto == numero):
+        print("você acertou")
+        break
+
+    elif (secreto > numero): 
+        print("vc errou, o número é maior!")
+        numero = int(input("Tente novamente: "))
+
+
+    elif (secreto < numero):
+        print("vc errou, o numero é menor!")
+        numero = int(input("Digite um número: "))
+else:
+    print("Você perdeu, o jogo acabou")
+
+print("O número era {}".format(secreto))
+
+    
+
+
+
+print("*********************************")
